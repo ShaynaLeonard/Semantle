@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "Semantal",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
