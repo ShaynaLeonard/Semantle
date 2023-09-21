@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Semantle</title>
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body dir='ltr'>
+    <main>
+        <!-- Page Title -->
+        <h1>Semantle</h1>
+
+        <!-- Buttons Section -->
+        <div id="buttons">
+            <div class="buttonPart"><button id="logoutButton" class="buttonNewUserLoginSave" >Logout</button></div>
+            <div class="buttonPart"><button id="customizeButton" class="buttonNewUserLoginSave">Customize</button></div>
+            <div class="buttonPart"><button id="openModalButton" class="buttonNewUserLoginSave">Personal Details</button></div>
+        </div>
+
+        <!-- Greeting and Info -->
+        <p id="greeting"></p>
+        <p id="yesterdaysWord"></p>
+        <p id="personalDetails"></p>
+
+        <!-- Modal Popup -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" style="color: red;"></div>
+
+        <!-- Guess Section -->
+        <div id="guessSection">
+            <input type="text" id="guessInput" placeholder="Your guess" />
+            <button type="button" class="buttonNewUserLoginSave" id="changeFontButton">Guess</button>
+            <div id="progress-spinner" class="progress-spinner"></div>
+        </div>
+
+        <!-- Word Table -->
+        <table id="wordTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Word</th>
+                    <th>Proximity</th>
+                    <th>How Close</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+
+        <!-- Guess Count -->
+        <p id="CountGuessesForToday"></p>
+
+        <!-- Customize Popup -->
+        <div id="customizePopup" class="popup">
+            <h1>Customize</h1>
+
+            <!-- Background Color Options -->
+            <h3>Pick a background color</h3>
+            <label><input type="radio" name="color" value="red"> Red</label>
+            <label><input type="radio" name="color" value="green"> Green</label>
+            <label><input type="radio" name="color" value="blue"> Blue</label>
+            <label><input type="radio" name="color" value="pink"> Pink</label>
+            <label><input type="radio" name="color" value="orange"> Orange</label>
+            <label><input type="radio" name="color" value="purple"> Purple</label>
+
+            <!-- Victory Animation Options -->
+            <h3>Pick a Victory Animation:</h3>
+            <input type="radio" id="showRadio" name="animationRadio" value="victory" />
+            <label for="showRadio">Victory</label>
+            <input type="radio" id="youWonRadio" name="animationRadio" value="youWon" />
+            <label for="youWonRadio">You won</label>
+            <label for="myRadio"><input type="radio" id="myRadio" name="animationRadio" value="champion" />Champion</label>
+
+            <!-- Font Family Options -->
+            <h3>Select a Font Family:</h3>
+            <label><input type="radio" name="fontFamily" value="'Courier New', Courier, monospace"> Courier New</label>
+            <label><input type="radio" name="fontFamily" value="Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"> Cambria</label>
+            <label><input type="radio" name="fontFamily" value="'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> Gill Sans</label>
+            <br>
+
+            <!-- Save Changes Button -->
+            <button type="button" class="buttonNewUserLoginSave" id="changeFontButton2">Save Changes</button>
+        </div>
+
+        <!-- Victory Animation Container -->
+        <div class="container hidden"> 
+            <div class="upper">Champion</div>
+            <div class="lower">Champion</div>
+            <div class="inside">♥️ YOU ARE THE CHAMPION OF SEMANTLE!! ♥️</div>
+        </div>
+
+        <!-- Victory Text -->
+        <div class="container1">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="animate-charcter" id="victoryText" style="display: none;">Victory!</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container 2 -->
+        <div id="container2" style="display: none;">
+            <span id="text1"></span>
+            <span id="text2"></span>
+        </div>
+
+        <!-- SVG Filters -->
+        <svg id="filters">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                                0 1 0 0 0
+                                                0 0 1 0 0
+                                                0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+    </main>
+
+    <footer>
+        <!-- External Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.statically.io/gh/zenorocha/clipboard.js/v2.0.10/dist/clipboard.min.js"></script>
+    </footer>
+
+    <!-- Your JavaScript File -->
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantle</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <div class="form-container" id="login-form">
+    <div class="part">
+      <h1 id="semantleHeader">SEMANTLE</h1>
+    </div>
+    <div class="part">
+      <h1>Login</h1>
+    </div>
+    <div class="part">
+      <input type="text" id="username" placeholder="Enter your username" class="input">
+    </div>
+    <div class="part">
+      <input type="password" id="password" placeholder="Enter your password" class="input">
+    </div>
+    <div class="part">
+      <button id="login-button" class="buttonNewUserLoginSave">Login</button>
+      <button id="new-user-button" class="buttonNewUserLoginSave">New User</button>
+    </div>
+  </div>
+
+  <div>
+    <div class="form-container" id="new-user-form">
+      <div class="part">
+        <h1 class="subTitle">New User Registration</h1>
+      </div>
+      <div class="part">
+        <input type="text" id="new-username" placeholder="Enter a new username" class="input">
+      </div>
+      <div class="part">
+        <input type="password" id="new-password" placeholder="Enter a new password" class="input">
+      </div>
+      <div class="part">
+        <input type="password" id="confirm-password" placeholder="Confirm your new password" class="input">
+      </div>
+      <div class="part">
+        <button id="save-button" class="buttonNewUserLoginSave">Save</button>
+      </div>
+      <div class="part">
+        <button id="back-button" class="buttonNewUserLoginSave">Back</button>
+      </div>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+
+</html>

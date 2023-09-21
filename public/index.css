@@ -1,0 +1,378 @@
+body {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: pink;
+  text-align: center;
+  font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+}
+
+main {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    width: 80%;
+    opacity: 0.8;
+    min-height: 1000px;
+}
+
+#guessInput {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+#guessButton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+#guessButton:hover {
+    background-color: #555;
+}
+
+#wordTable {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+#errorMessage {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Styles for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
+
+/* Close button style */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  
+  .color-button {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Define background colors for color buttons */
+  .bg-red {
+    background-color: red;
+
+  }
+  
+  .bg-blue {
+    background-color: blue;
+
+  }
+  
+  .bg-green {
+    background-color: green;
+   
+  }
+
+  .animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+
+
+#container2 {
+    filter: url(#threshold) blur(0.6px);
+    margin-left: -270px;
+
+}
+
+#text1,
+#text2 {
+    position: absolute;
+    font-family: "Raleway", sans-serif;
+    font-size: 80pt;
+    font-weight: bolder;
+  
+
+}
+
+
+
+:before,
+:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.container {
+  width: 9.25em;
+  height: 1.15em;
+  font-size: 8rem;
+  font-family: sans-serif;
+  position: relative;
+  margin-left: 170px;
+}
+
+.container div {
+  position: absolute;
+  left: 0;
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.upper {
+  top: 0;
+  height: 52.5%;
+  color: #000000;
+  overflow: hidden;
+  z-index: 3;
+  /* animation: moveUp 1.5s ease-in-out 1; */
+  animation: moveUp 2.5s ease-in-out infinite;
+  background-color: #ffffff;
+}
+
+.lower {
+  bottom: 0;
+  height: 100%;
+  background: linear-gradient(180deg, #ffffff 52.5%, #000000 52.5%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  z-index: 1;
+  /* animation: moveDown 1.5s ease-in-out 1; */
+  animation: moveDown 2.5s ease-in-out infinite; 
+}
+
+.inside {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+  text-align: center;
+  z-index: 2;
+  font-size: 1rem;
+  color: #dc143c;
+}
+
+@keyframes moveUp {
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50%,
+  70% {
+    top: -45px;
+  }
+}
+
+@keyframes moveDown {
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50%,
+  70% {
+    top: 30px;
+  }
+}
+
+@media (max-width: 424px) {
+  .container {
+    font-size: 2.5rem;
+  }
+
+  .inside {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    font-size: 2rem;
+  }
+
+  .inside {
+    font-size: 0.5rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.buttonNewUserLoginSave {
+  background-color: pink;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 7px;
+  width: 170px;
+  /* margin-top: 150px; */
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.buttonNewUserLoginSave:hover {
+  background-color: pink;
+  color: white;
+}
+
+
+#changeFontButton {
+  font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Add this CSS class for the disabled button styling */
+.disabledButton {
+  background-color: grey; /* Change the background color to grey */
+  color: #fff; /* Change the text color to white */
+  cursor: not-allowed; /* Change the cursor to indicate it's disabled */
+  /* Add any other styles you want for the disabled button here */
+}
+
+
+
+.progress-spinner {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  display: none;
+  margin-left: 470px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#buttons{
+  margin-top: -100px;
+  margin-right: -1300px;
+  width: fit-content;
+}
+
+.buttonPart{
+  width: fit-content;
+}
+
+#greeting{
+  margin-top: -100px;
+}
+
+
+  
+
+  
+  
+
